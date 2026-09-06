@@ -4,10 +4,21 @@ This directory contains structured extracts from four ancient sources relevant t
 
 | Dataset | Ancient Source | Web Edition |
 |---|---|---|
-| `A_Caesar_Civil_Wars_MIT.csv` | Julius Caesar, *Civil War* 1.5–1.7 | MIT Classics |
-| `B_Plutarch_Caesar_Gutenberg.csv` | Plutarch, *Life of Caesar* 32 | Project Gutenberg |
-| `C_Suetonius_Julius_Lexundria.csv` | Suetonius, *Life of Julius Caesar* 29–31 | Lexundria |
-| `D_Cicero_Ad_Atticum.csv` | Cicero, *Letters to Atticus*, Book 7 | Public online edition |
+| `A_Caesar_Civil_Wars_MIT.csv` | Julius Caesar, *Civil War* 1.5–1.11 | MIT Classics (W. A. McDevitte & W. S. Bohn) |
+| `B_Plutarch_Caesar_Gutenberg.csv` | Plutarch, *Life of Caesar* 30–32 | Project Gutenberg (George Long) |
+| `C_Suetonius_Julius_Lexundria.csv` | Suetonius, *Life of Julius Caesar* 29–31 | Lexundria (J. C. Rolfe) |
+| `D_Cicero_Ad_Atticum.csv` | Cicero, *Letters to Atticus* 7.10–7.16 | Attalus (E. O. Winstedt) |
+
+## Source Provenance
+
+Each dataset is derived from a publicly accessible English translation of the relevant ancient text. Exact book, chapter, or letter references are retained so that the evidence summaries can be independently checked against the source edition.
+
+- **Caesar:** *Civil War*, translated by W. A. McDevitte and W. S. Bohn, via the MIT Internet Classics Archive.
+- **Plutarch:** *Life of Caesar*, translated by George Long, via Project Gutenberg.
+- **Suetonius:** *Life of Julius Caesar*, translated by J. C. Rolfe, via Lexundria.
+- **Cicero:** *Letters to Atticus*, translated by E. O. Winstedt, via Attalus.
+
+The CSV entries contain evidence summaries rather than purported verbatim quotations. This distinction is intentional: the datasets structure the historical evidence for evaluation while preserving the cited primary texts as the authority for exact wording.
 
 ## Dataset Design
 
