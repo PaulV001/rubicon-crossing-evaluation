@@ -1,49 +1,39 @@
 # Rubicon Crossing Evaluation
 
-A source-grounded LLM evaluation task designed to test historical reasoning across conflicting primary accounts of Julius Caesar's crossing of the Rubicon in 49 BCE.
+**A source-grounded LLM evaluation benchmark for testing multi-document reasoning, source criticism, contradiction handling, and calibrated judgment.**
 
-## Overview
+This project transforms a historical research problem — whether Julius Caesar's crossing of the Rubicon in 49 BCE was legally and politically justified — into a structured evaluation task for large language models.
 
-This project demonstrates the design of a structured prompt–rubric evaluation using methods from historical source criticism and LLM evaluation.
+Rather than testing factual recall, the benchmark requires a model to synthesize evidence from multiple primary sources, distinguish legal from political justification, reconcile conflicting accounts, assess source provenance and bias, and produce a defensible source-grounded judgment.
 
-Rather than testing factual recall, the task requires a model to synthesize evidence from multiple primary sources, distinguish legal from political justification, reconcile conflicting accounts, evaluate competing explanations of Caesar's motives, and produce a source-grounded judgment.
+## What This Project Demonstrates
 
-The evaluation packet uses structured extracts from:
+This repository demonstrates an end-to-end approach to designing an LLM evaluation:
 
-- Julius Caesar, *Civil War*
-- Plutarch, *Life of Caesar*
-- Suetonius, *Life of Julius Caesar*
-- Cicero, *Letters to Atticus*
+- **Dataset construction** — selected primary-source evidence transformed into structured CSV datasets
+- **Prompt design** — a constrained task requiring cross-document synthesis rather than retrieval
+- **Rubric design** — ten criteria evaluating extraction, reasoning, synthesis, source criticism, and judgment
+- **Dependency-aware evaluation** — later analytical criteria build on evidence established in earlier criteria
+- **Golden-response design** — a reference answer demonstrating the expected reasoning process
+- **Source provenance** — evidence remains traceable to publicly verifiable editions of the underlying texts
+- **Evaluation methodology** — documentation explaining the design principles and intended model behaviors
 
-## Evaluation Design
-
-The project consists of four components:
-
-1. **Source dataset** — structured extracts from primary sources
-2. **Prompt** — a source-grounded historical reasoning task
-3. **Rubric** — criteria covering extraction, synthesis, source criticism, and reasoning
-4. **Golden response** — a reference answer demonstrating the expected reasoning process
-
-The central evaluation question is:
-
-> **Was Caesar's crossing of the Rubicon legally and politically justified?**
-
-The task deliberately requires synthesis rather than simple retrieval. No individual source provides the answer. The model must reconcile Caesar's self-justification with competing ancient accounts and contemporary evidence.
-
-## Repository Structure
+## Evaluation Architecture
 
 ```text
-rubicon-crossing-evaluation/
-├── README.md
-├── LICENSE
-├── data/
-│   ├── A_Caesar_Civil_Wars_MIT.csv
-│   ├── B_Plutarch_Caesar_Gutenberg.csv
-│   ├── C_Suetonius_Julius_Lexundria.csv
-│   └── D_Cicero_Ad_Atticum.csv
-├── evaluation/
-│   ├── prompt.md
-│   ├── rubric.md
-│   └── golden_response.md
-└── docs/
-    └── methodology.md
+Primary Sources
+      │
+      ▼
+Structured Evidence (CSV)
+      │
+      ▼
+Source-Grounded Prompt
+      │
+      ▼
+10-Criterion Evaluation Rubric
+      │
+      ▼
+Golden Reference Response
+      │
+      ▼
+Model Evaluation
